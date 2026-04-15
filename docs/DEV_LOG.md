@@ -121,3 +121,39 @@
 
 - PR: #6（badges），Phase 2 skills PR：本次迭代
 - Step: ROADMAP Step 8、9、10
+
+---
+
+## [2026-04-15 13:15] 迭代 #4 — LostSunset + claude
+
+### 📋 本次目標
+
+- 補齊 CLAUDE-CODE-自動開發指令.md 四模式的獨立 skill 包裝（模式 B 已有 `auto-iterate`）
+
+### ✅ 完成項目
+
+- `.claude/skills/new-project-init/SKILL.md`：模式 A Phase 0 九小節（分析、設計、ROADMAP 80 步、治理、Issue、團隊、日誌、首次 commit + v0.1.0 tag）
+- `.claude/skills/maintenance-patrol/SKILL.md`：模式 C C.1 巡檢 + C.2 持續改善 + C.3 版本管理
+- `.claude/skills/project-takeover/SKILL.md`：模式 D D0 考古 + D1 治理 + D2 切入模式 B（R1–R4 接手版 ROADMAP）
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- N/A
+
+### 🔄 下次目標
+
+- 四模式 skill 齊備，`auto-dev-mode` 可轉為純 router（偵測後 delegate 到對應 skill）
+
+### 💡 技術筆記
+
+- 四個模式 skill 的 description 皆含前置條件明文，降低誤觸機率
+- `project-takeover` 強調「前 2–3 小時絕不寫業務 code」，符合原文保守策略
+
+### 🔗 關聯
+
+- PR: 本次迭代（Phase 3）
+- Step: ROADMAP Step 11、12、13
