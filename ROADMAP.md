@@ -103,4 +103,35 @@
   - [x] description 觸發力檢查條列
   - [x] PR 合併（#7）
 
-## Phase 3+：待規劃
+## Phase 3：模式 A/C/D 補齊
+
+### Step 11：new-project-init skill
+- **狀態**: ✅ 完成
+- **依賴**: Step 3
+- **範圍**: `.claude/skills/new-project-init/SKILL.md`（模式 A，Phase 0 九小節）
+- **驗收條件（AC）**:
+  - [x] 九小節流程完整
+  - [x] 前置條件檢查
+  - [x] PR 合併
+- **完成日期**: 2026-04-15
+
+### Step 12：maintenance-patrol skill
+- **狀態**: ✅ 完成
+- **依賴**: Step 3
+- **範圍**: `.claude/skills/maintenance-patrol/SKILL.md`（模式 C，C.1–C.3）
+- **驗收條件（AC）**:
+  - [x] 巡檢、改善、版本管理三階段
+  - [x] PR 合併
+- **完成日期**: 2026-04-15
+
+### Step 13：project-takeover skill
+- **狀態**: ✅ 完成
+- **依賴**: Step 3
+- **範圍**: `.claude/skills/project-takeover/SKILL.md`（模式 D，Phase D0–D2）
+- **驗收條件（AC）**:
+  - [x] 考古、治理、切入模式 B 三階段
+  - [x] R1–R4 ROADMAP 接手版
+  - [x] PR 合併
+- **完成日期**: 2026-04-15
+
+## Phase 4+：待規劃
