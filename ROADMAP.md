@@ -53,5 +53,54 @@
   - [x] v0.1.0 tag 建立
 - **完成日期**: 2026-04-15（PR #4）
 
-## Phase 2+：待規劃
-（工作流穩定後再依需求新增 skills）
+## Phase 2：本專案自建 skills
+
+### Step 6：pptx-visual-qa skill
+- **狀態**: ✅ 完成
+- **依賴**: Step 3
+- **範圍**: `.claude/skills/pptx-visual-qa/SKILL.md`
+- **驗收條件（AC）**:
+  - [x] SKILL.md 含 LibreOffice + PyMuPDF 流程
+  - [x] PR 合併
+- **完成日期**: 2026-04-15（PR #5）
+- **來源**: 從 `D:\35_UAV` 專案抽取實戰經驗
+
+### Step 7：resilient-image-download skill
+- **狀態**: ✅ 完成
+- **依賴**: Step 3
+- **範圍**: `.claude/skills/resilient-image-download/SKILL.md`
+- **驗收條件（AC）**:
+  - [x] SKILL.md 含 429 / UA / Wikimedia 繞路與小圖校驗
+  - [x] PR 合併
+- **完成日期**: 2026-04-15（PR #5）
+- **來源**: 從 `D:\35_UAV` 專案抽取實戰經驗
+
+### Step 8：auto-iterate skill
+- **狀態**: 🔨 進行中
+- **依賴**: Step 3
+- **範圍**: `.claude/skills/auto-iterate/SKILL.md`（包裝 CLAUDE-CODE-自動開發指令.md 模式 B 一鍵執行）
+- **驗收條件（AC）**:
+  - [ ] 六階段流程完整
+  - [ ] 含 upstream guard 與正體中文規則
+  - [ ] PR 合併
+
+### Step 9：upstream-search skill
+- **狀態**: 🔨 進行中
+- **依賴**: Step 4
+- **範圍**: `.claude/skills/upstream-search/SKILL.md`（跨三個 submodule 搜尋）
+- **驗收條件（AC）**:
+  - [ ] 明列三個 submodule 定位與適用場景
+  - [ ] 含 grep/find 範本
+  - [ ] 只讀規則明確
+  - [ ] PR 合併
+
+### Step 10：skill-scaffold skill
+- **狀態**: 🔨 進行中
+- **依賴**: Step 3, Step 9
+- **範圍**: `.claude/skills/skill-scaffold/SKILL.md`（依 upstream 慣例生成新 skill 骨架）
+- **驗收條件（AC）**:
+  - [ ] 含輸入需求、模板、檢查清單
+  - [ ] description 觸發力檢查條列
+  - [ ] PR 合併
+
+## Phase 3+：待規劃
