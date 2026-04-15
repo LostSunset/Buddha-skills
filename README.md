@@ -1,5 +1,12 @@
 # Buddha-skills
 
+[![Daily Upstream Sync](https://github.com/LostSunset/Buddha-skills/actions/workflows/update-upstream.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/update-upstream.yml)
+[![Upstream Guard](https://github.com/LostSunset/Buddha-skills/actions/workflows/upstream-guard.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/upstream-guard.yml)
+[![Claude PR Review](https://github.com/LostSunset/Buddha-skills/actions/workflows/claude-review.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/claude-review.yml)
+[![Release](https://img.shields.io/github/v/release/LostSunset/Buddha-skills?include_prereleases&sort=semver)](https://github.com/LostSunset/Buddha-skills/releases)
+[![Submodules](https://img.shields.io/badge/upstream--submodules-3-blue)](./upstream/README.md)
+[![Docs](https://img.shields.io/badge/docs-正體中文-ea5545)](./CLAUDE.md)
+
 > LostSunset 專屬的 Claude Code skills 庫。
 
 ## 內容
