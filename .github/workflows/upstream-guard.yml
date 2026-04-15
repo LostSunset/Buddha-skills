@@ -1,0 +1,32 @@
+name: Upstream Guard
+
+on:
+  pull_request:
+    paths:
+      - 'upstream/**'
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check no direct modifications under upstream/<name>/
+        run: |
+          set -e
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.event.pull_request.head.sha }}"
+
+          # 只撈出「檔案內容變更」（M/A/D），排除 submodule pointer 變更
+          CHANGED=$(git diff --name-only --diff-filter=ACMRD "$BASE" "$HEAD" -- 'upstream/*/**' || true)
+
+          if [ -n "$CHANGED" ]; then
+            echo "::error::禁止直接修改 upstream/<name>/ 內容。upstream/ 必須與原作者保持一致，僅可透過 submodule pointer 更新。"
+            echo "違規檔案："
+            echo "$CHANGED"
+            exit 1
+          fi
+
+          echo "OK: 未偵測到 upstream/<name>/ 內容變更"
