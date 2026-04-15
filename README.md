@@ -66,8 +66,8 @@ git submodule update --init --recursive
 
 ## 進度
 
-- **目前版本**：[v0.3.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.3.0)
-- **已完成 Phase**：Phase 1（工作流基礎）、Phase 2（自建 skills）、Phase 3（四模式補齊）
+- **目前版本**：[v0.5.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.5.0)
+- **已完成 Phase**：Phase 1（工作流基礎）、Phase 2（自建 skills）、Phase 3（四模式補齊）、Phase 4（marketplace）、Phase 5（PIC 實戰抽取）
 - **ROADMAP Step**：15 / 15 ✅
 - **自建 skills**：13 個
 
