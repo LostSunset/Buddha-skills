@@ -1,0 +1,33 @@
+# macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude local state
+.claude/settings.local.json
+.claude/state/
+.claude/cache/
+
+# OMC
+.omc/cache/
+.omc/logs/
+
+# Logs
+*.log
+
+# Node / Python build artifacts
+node_modules/
+__pycache__/
+*.pyc
+dist/
+build/
+
+# Environment
+.env
+.env.local
