@@ -1,0 +1,101 @@
+name: Daily Upstream Sync
+
+on:
+  schedule:
+    - cron: '0 18 * * *'   # UTC 18:00 = 台北 02:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Configure git identity
+        run: |
+          git config user.name "claude-upstream-sync[bot]"
+          git config user.email "claude-upstream-sync@users.noreply.github.com"
+
+      - name: Record old SHAs
+        id: old
+        run: |
+          {
+            for sub in upstream/*/; do
+              name=$(basename "$sub")
+              sha=$(git -C "$sub" rev-parse HEAD)
+              echo "${name}=${sha}"
+            done
+          } > /tmp/old-shas.txt
+          cat /tmp/old-shas.txt
+
+      - name: Update submodules
+        id: update
+        run: |
+          git submodule update --remote --merge
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate diff summary
+        if: steps.update.outputs.changed == 'true'
+        id: summary
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          {
+            echo "## 上游更新摘要（$DATE UTC）"
+            echo ""
+            while IFS='=' read -r name old; do
+              sub="upstream/$name"
+              new=$(git -C "$sub" rev-parse HEAD)
+              if [ "$old" != "$new" ]; then
+                count=$(git -C "$sub" rev-list --count "$old..$new")
+                echo "### $name"
+                echo ""
+                echo "\`$old\` → \`$new\` （$count commits）"
+                echo ""
+                echo '```'
+                git -C "$sub" log --oneline "$old..$new" | head -30
+                echo '```'
+                echo ""
+              fi
+            done < /tmp/old-shas.txt
+
+            echo "---"
+            echo ""
+            echo "@claude 請審查本 PR 的上游變更，檢查是否影響以下路徑："
+            echo "- \`.claude/skills/**\`"
+            echo "- \`docs/\`（排除 \`docs/superpowers/specs/\`）"
+            echo "- 根目錄 \`CLAUDE.md\` / \`MEMORY.md\` / \`ROADMAP.md\`"
+            echo ""
+            echo "若有影響請**直接 push commit 到本 PR 分支**修正本專案程式碼以適配。"
+            echo "若無影響，留言「No impact」即可。"
+            echo ""
+            echo "完成後請使用 \`dev-log\` skill 以 \`auto/upstream-sync\` 作者身份寫入 \`docs/DEV_LOG.md\`。"
+          } > /tmp/pr-body.md
+
+      - name: Create or update Pull Request
+        if: steps.update.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          branch: chore/upstream-update-${{ steps.summary.outputs.date }}
+          base: main
+          title: "chore(upstream): 每日同步 ${{ steps.summary.outputs.date }}"
+          body-path: /tmp/pr-body.md
+          commit-message: "chore(upstream): daily sync ${{ steps.summary.outputs.date }}"
+          labels: |
+            upstream-sync
+            claude-review-requested
+          delete-branch: false
