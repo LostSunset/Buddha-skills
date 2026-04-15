@@ -46,3 +46,41 @@
 - PR: #1, #2, #3, #4
 - Release: [v0.1.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.1.0)
 - Step: ROADMAP Step 1–5（全部 ✅）
+
+---
+
+## [2026-04-15 12:15] 迭代 #2 — LostSunset + claude
+
+### 📋 本次目標
+
+- 從 `D:\35_UAV` 無人機簡報專案抽取兩項實戰技術，新增為本 repo 的 skills
+- 對外貢獻場景：PPTX 視覺 QA 與批次圖片下載（Wikimedia 429 繞路）
+
+### ✅ 完成項目
+
+- 新增 `.claude/skills/pptx-visual-qa/SKILL.md`——LibreOffice + PyMuPDF 把 PPTX 轉 PNG 做版面檢查的完整流程 (WIP)
+- 新增 `.claude/skills/resilient-image-download/SKILL.md`——批次圖片下載的 User-Agent、Wikimedia `/thumb/` 繞路、Retry-After、小圖校驗技巧 (WIP)
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- N/A（skill 為文件，無自動化測試；實戰驗證來自來源專案 29 頁簡報與 60+ 張圖片下載）
+
+### 🔄 下次目標
+
+- 若有其他專案也用到類似流程，可於下次迭代補 `video-visual-qa`（影片逐幀截圖檢查）對應 skill
+
+### 💡 技術筆記
+
+- Wikimedia `/thumb/` 對自動化有嚴格限速但原檔路徑沒有；`Special:FilePath/<FILE>` 是最穩備援
+- python-pptx 的 CJK 字寬估算 ≈ 字級 pt × 1/72 吋，建議比估算值再降 10-15% 作安全邊
+- PDF→PNG 日常 QA 建議 110 dpi，最終精修 150 dpi
+
+### 🔗 關聯
+
+- PR: #5
+- Issue: —
+- Step: Phase 1 額外新增（Step 6、Step 7 — 實戰 skill 抽取）
