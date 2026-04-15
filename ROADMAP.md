@@ -76,31 +76,31 @@
 - **來源**: 從 `D:\35_UAV` 專案抽取實戰經驗
 
 ### Step 8：auto-iterate skill
-- **狀態**: 🔨 進行中
+- **狀態**: ✅ 完成
 - **依賴**: Step 3
 - **範圍**: `.claude/skills/auto-iterate/SKILL.md`（包裝 CLAUDE-CODE-自動開發指令.md 模式 B 一鍵執行）
 - **驗收條件（AC）**:
-  - [ ] 六階段流程完整
-  - [ ] 含 upstream guard 與正體中文規則
-  - [ ] PR 合併
+  - [x] 六階段流程完整
+  - [x] 含 upstream guard 與正體中文規則
+  - [x] PR 合併（#7）
 
 ### Step 9：upstream-search skill
-- **狀態**: 🔨 進行中
+- **狀態**: ✅ 完成
 - **依賴**: Step 4
 - **範圍**: `.claude/skills/upstream-search/SKILL.md`（跨三個 submodule 搜尋）
 - **驗收條件（AC）**:
-  - [ ] 明列三個 submodule 定位與適用場景
-  - [ ] 含 grep/find 範本
-  - [ ] 只讀規則明確
-  - [ ] PR 合併
+  - [x] 明列三個 submodule 定位與適用場景
+  - [x] 含 grep/find 範本
+  - [x] 只讀規則明確
+  - [x] PR 合併（#7）
 
 ### Step 10：skill-scaffold skill
-- **狀態**: 🔨 進行中
+- **狀態**: ✅ 完成
 - **依賴**: Step 3, Step 9
 - **範圍**: `.claude/skills/skill-scaffold/SKILL.md`（依 upstream 慣例生成新 skill 骨架）
 - **驗收條件（AC）**:
-  - [ ] 含輸入需求、模板、檢查清單
-  - [ ] description 觸發力檢查條列
-  - [ ] PR 合併
+  - [x] 含輸入需求、模板、檢查清單
+  - [x] description 觸發力檢查條列
+  - [x] PR 合併（#7）
 
 ## Phase 3+：待規劃
