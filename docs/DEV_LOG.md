@@ -84,3 +84,40 @@
 - PR: #5
 - Issue: —
 - Step: Phase 1 額外新增（Step 6、Step 7 — 實戰 skill 抽取）
+
+---
+
+## [2026-04-15 12:45] 迭代 #3 — LostSunset + claude
+
+### 📋 本次目標
+
+- 完成 Phase 2 三個自建 skill：`auto-iterate`、`upstream-search`、`skill-scaffold`
+
+### ✅ 完成項目
+
+- `.claude/skills/auto-iterate/SKILL.md`：包裝 CLAUDE-CODE-自動開發指令.md 模式 B 一鍵執行（B.1–B.6 + 六項必做更新）(WIP)
+- `.claude/skills/upstream-search/SKILL.md`：跨三個 submodule 搜尋範本、只讀規則 (WIP)
+- `.claude/skills/skill-scaffold/SKILL.md`：依 upstream/anthropic-skills 慣例生成新 skill 骨架、description 觸發力檢查 (WIP)
+- README 加上 CI / Release / Submodule badges (commit: `4073c86`, PR #6)
+
+### 🐛 發現問題
+
+- PR #5 與 Phase 1 的 DEV_LOG 迭代 #1 衝突 → 本地 rebase + 重新編號為迭代 #2 後合併
+
+### 📊 測試結果
+
+- N/A（skill 為文件）
+
+### 🔄 下次目標
+
+- 實戰使用 Phase 2 三個 skill；若有觸發不順或描述不精準，依用例回補
+
+### 💡 技術筆記
+
+- `auto-iterate` 與 `auto-dev-mode` 分工：前者僅處理模式 B（有 ROADMAP 持續迭代），後者做整體模式偵測
+- `skill-scaffold` 會呼叫 `upstream-search` 作為參考資源鏈
+
+### 🔗 關聯
+
+- PR: #6（badges），Phase 2 skills PR：本次迭代
+- Step: ROADMAP Step 8、9、10
