@@ -15,6 +15,10 @@
 | 2026-04-15 | marketplace 只放本 repo 自建 skill（10 個） | 避免重新發佈他人作品的授權風險，讓使用者直接接上游取得最新版 | `.claude-plugin/marketplace.json` |
 | 2026-04-15 | 單一 plugin `buddha-all` 打包 10 個 skill | 降低安裝複雜度，單一指令一次取得 | marketplace 結構 |
 | 2026-04-15 | marketplace version 獨立於 git tag | marketplace 穩定度與 repo 開發節奏解耦 | 版本管理 |
+| 2026-04-15 | 中大型專案切多個里程碑，每個走完整 spec→plan→exec→PR | 每個里程碑都可獨立交付測試，合併 conflict 最小 | `milestone-pipeline` skill |
+| 2026-04-15 | Subagent dispatch 不死守 1 task = 3 次 review | 機械 task 合併派、只跑 spec review 可省 60% 時間 | `subagent-dispatch-matrix` skill |
+| 2026-04-15 | Claude Code Action workflow 不傳 `github_token` | action 會自動用 Claude GitHub App installation token，身份變 `claude[bot]` 而非 `github-actions[bot]` | `claude-gh-app-setup` skill / `.github/workflows/claude.yml` |
+| 2026-04-15 | Branch protection 用 `gh api -X PUT` 腳本化 | 免進 UI、可重現、可 diff | 倉庫設定流程 |
 
 ## 已知問題與解法
 
@@ -38,3 +42,4 @@
 | #4 | 2026-04-15 | Step 11–13 | Phase 3 四模式 skill 補齊（A/C/D + B router 化） |
 | #5 | 2026-04-15 | 收尾 | 六項必做更新 + 新增 SESSIONS.md 雙層紀錄 |
 | #6 | 2026-04-15 | Step 14 | Phase 4 marketplace 支援（`/plugin install buddha-all@buddha-skills`） |
+| #7 | 2026-04-15 | Step 15 | Phase 5 — 從 `D:\37_PIC` 全端 WebGUI 專案抽取 3 個 skill（milestone-pipeline、subagent-dispatch-matrix、claude-gh-app-setup），marketplace 擴充為 13 個 skill |

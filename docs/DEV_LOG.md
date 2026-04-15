@@ -239,3 +239,47 @@
 - PR: #9
 - Step: ROADMAP Step 14
 - Release: v0.4.0（本次）
+
+---
+
+## [2026-04-15 19:55] 迭代 #7 — LostSunset + claude
+
+### 📋 本次目標
+
+- 從 `D:\37_PIC`（LostSunset/PIC，全端 WebGUI 專案 M2–M6）抽取可重用 skill 回寫 Buddha-skills。
+
+### ✅ 完成項目
+
+- 新增 `.claude/skills/milestone-pipeline/SKILL.md`：大專案切 N 個里程碑、每個走完整 spec→plan→execute→PR→merge 流水線 (commit: `(pending)`)
+- 新增 `.claude/skills/subagent-dispatch-matrix/SKILL.md`：subagent dispatch 規模、審查強度、model 選擇決策矩陣，實戰證實可省 60% dispatch 次數 (commit: `(pending)`)
+- 新增 `.claude/skills/claude-gh-app-setup/SKILL.md`：Max 訂閱 OAuth 完整設定、`claude[bot]` 身份關鍵（workflow 不傳 `github_token`）、branch protection (commit: `(pending)`)
+- `.claude-plugin/marketplace.json`：skills 陣列 10 → 13，version 1.0.0 → 1.1.0
+- `README.md`：skills 數量 10 → 13，skills 一覽新增「實戰（PIC 全端 WebGUI）」類別
+- `MEMORY.md`：補 4 條技術決策（milestone 切分、subagent 調度、GitHub App bot 身份、branch protection 腳本化）+ 迭代 #7 表格
+- `ROADMAP.md`：新增 Phase 5 Step 15
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- marketplace.json 結構保持一致（單一 plugin + skills 陣列）
+- 3 個 SKILL.md frontmatter description 都含 3–5 個觸發句（與既有 skill 一致）
+
+### 🔄 下次目標
+
+- 實機 `/plugin install buddha-all@buddha-skills` 驗證 13 個 skill 都能被 Claude Code 辨識
+- 若後續 PIC 專案有 Phase 2（VTK 3D / remote runner）實戰，再回頭抽第 4 個 skill
+
+### 💡 技術筆記
+
+- `claude-gh-app-setup` 的關鍵陷阱（workflow 別傳 `github_token`）是在 PIC 專案 merge 後 smoke test 才發現的 — 其他專案都是 `claude[bot]`，只有我們是 `github-actions[bot]`，拿掉那行就對了
+- `subagent-dispatch-matrix` 的 60% 節省是實測數字：PIC 的 12-task M5 實際只派了 12–15 次而非 36 次，其中機械 task（scaffold、form sections、viz components）全部合併 + 只跑 spec review
+- `milestone-pipeline` 是 PIC 整個開發流程的骨架：M2 core → M3 API → M4 frontend skeleton → M5 frontend features → M6 polish，每個都是一條 feature 分支、一個 PR、一次 merge
+
+### 🔗 關聯
+
+- PR: (pending)
+- Step: ROADMAP Step 15
+- 來源專案: LostSunset/PIC（M2–M6 全端 WebGUI，main HEAD 截至今日 c8ab4c4）

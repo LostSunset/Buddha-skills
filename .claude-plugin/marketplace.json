@@ -5,13 +5,13 @@
     "email": "lollipopg4ao3@gmail.com"
   },
   "metadata": {
-    "description": "LostSunset 個人 Claude Code skills 庫 — 涵蓋開發日誌、四模式自動開發（A/B/C/D）、skill 工具鏈，以及從實戰專案抽取的 PPTX 視覺 QA 與批次圖片下載",
-    "version": "1.0.0"
+    "description": "LostSunset 個人 Claude Code skills 庫 — 涵蓋開發日誌、四模式自動開發（A/B/C/D）、skill 工具鏈、PPTX 視覺 QA、批次圖片下載，以及從全端 WebGUI 實戰抽取的里程碑流水線、subagent dispatch 策略、Claude GitHub App 設定",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "buddha-all",
-      "description": "完整 Buddha-skills 套件（10 個 skill）：dev-log、auto-dev-mode router、四模式 skill（new-project-init / auto-iterate / maintenance-patrol / project-takeover）、upstream-search、skill-scaffold、pptx-visual-qa、resilient-image-download",
+      "description": "完整 Buddha-skills 套件（13 個 skill）：dev-log、auto-dev-mode router、四模式 skill（new-project-init / auto-iterate / maintenance-patrol / project-takeover）、upstream-search、skill-scaffold、pptx-visual-qa、resilient-image-download、以及 PIC 全端專案實戰抽取的 milestone-pipeline / subagent-dispatch-matrix / claude-gh-app-setup",
       "source": "./",
       "strict": false,
       "skills": [
@@ -24,7 +24,10 @@
         "./.claude/skills/upstream-search",
         "./.claude/skills/skill-scaffold",
         "./.claude/skills/pptx-visual-qa",
-        "./.claude/skills/resilient-image-download"
+        "./.claude/skills/resilient-image-download",
+        "./.claude/skills/milestone-pipeline",
+        "./.claude/skills/subagent-dispatch-matrix",
+        "./.claude/skills/claude-gh-app-setup"
       ]
     }
   ]

@@ -147,4 +147,23 @@
   - [x] PR 合併
 - **完成日期**: 2026-04-15（PR #9）
 
-## Phase 5+：待規劃
+## Phase 5：從實戰專案萃取 skills
+
+### Step 15：從 PIC WebGUI 專案抽取 3 個 skill
+- **狀態**: ✅ 完成
+- **依賴**: Step 14
+- **範圍**:
+  - `.claude/skills/milestone-pipeline/`（大專案切 N 個里程碑、每個跑一次完整流水線）
+  - `.claude/skills/subagent-dispatch-matrix/`（subagent 發派規模、審查強度、model 選擇的決策矩陣）
+  - `.claude/skills/claude-gh-app-setup/`（Max 訂閱 OAuth + claude[bot] 身份 + branch protection 完整設定）
+  - marketplace.json 擴充為 13 個 skill，version 1.1.0
+  - README / MEMORY 同步
+- **驗收條件（AC）**:
+  - [x] 3 個 SKILL.md 格式與既有 skill 一致
+  - [x] marketplace.json 通過 JSON 語法驗證、skills 陣列長度 = 13
+  - [x] 每個 skill 的 description 含 3–5 個觸發字詞
+  - [x] PR 合併
+- **來源專案**: `D:\37_PIC`（`LostSunset/PIC`，M2–M6 全端 WebGUI）
+- **完成日期**: 2026-04-15
+
+## Phase 6+：待規劃
