@@ -21,14 +21,32 @@
 
 ## 以 Claude Code Plugin 安裝（推薦）
 
-在 Claude Code 裡執行：
+### 本 repo 的 10 個自建 skill
 
 ```bash
 /plugin marketplace add LostSunset/Buddha-skills
 /plugin install buddha-all@buddha-skills
 ```
 
-一次取得全部 10 個 skill。不需要 clone 本 repo，也不需要管 submodule。
+### 搭配三個上游 skill 庫（各自獨立安裝，保持原作者維護）
+
+本 repo 的 `upstream/` 是開發時的參考鏡像，**執行期**請直接安裝上游各自的 marketplace，取得最新版與原作者的維護：
+
+```bash
+# anthropic-skills（官方 skills 庫）
+/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+/plugin install claude-api@anthropic-agent-skills
+
+# oh-my-claudecode（32 skills + 28 agents 的多代理編排）
+/plugin marketplace add yeachan-heo/oh-my-claudecode
+/plugin install oh-my-claudecode@omc
+
+# andrej-karpathy-skills 目前只有 1 個 skill、無 marketplace；可手動複製單檔使用
+```
+
+不需要 clone 本 repo 也不需管 submodule。
 
 ## Clone（開發或修改本 repo 時才需要）
 
