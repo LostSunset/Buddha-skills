@@ -15,8 +15,7 @@ desktop.ini
 .claude/cache/
 
 # OMC
-.omc/cache/
-.omc/logs/
+.omc/
 
 # Logs
 *.log
