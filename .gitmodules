@@ -1,0 +1,15 @@
+[submodule "upstream/anthropic-skills"]
+	path = upstream/anthropic-skills
+	url = https://github.com/anthropics/skills
+	branch = main
+	update = merge
+[submodule "upstream/andrej-karpathy-skills"]
+	path = upstream/andrej-karpathy-skills
+	url = https://github.com/forrestchang/andrej-karpathy-skills
+	branch = main
+	update = merge
+[submodule "upstream/oh-my-claudecode"]
+	path = upstream/oh-my-claudecode
+	url = https://github.com/yeachan-heo/oh-my-claudecode
+	branch = main
+	update = merge

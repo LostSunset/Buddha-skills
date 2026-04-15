@@ -1,0 +1,6 @@
+upstream/** linguist-vendored=true
+upstream/** linguist-generated=true
+* text=auto eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf
