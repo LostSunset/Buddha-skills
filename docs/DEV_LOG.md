@@ -196,3 +196,46 @@
 - SESSION: #1
 - Release: v0.3.0
 - Step: 無新增 ROADMAP Step（純收尾）
+
+---
+
+## [2026-04-15 14:15] 迭代 #6 — LostSunset + claude
+
+### 📋 本次目標
+
+- 讓 Buddha-skills 可透過 `/plugin install` 安裝（類比 `anthropics/skills`）
+
+### ✅ 完成項目
+
+- 新增 `.claude-plugin/marketplace.json`：marketplace `buddha-skills` + 單一 plugin `buddha-all`（含全部 10 個 skill）(commit: `b2ed13e`, PR #9)
+- README 新增「以 Claude Code Plugin 安裝」小節，同步引導三個 upstream marketplace 各自的安裝指令 (commit: `87468b1`)
+- JSON 以 node 驗證語法、skills 陣列長度 = 10
+- ROADMAP Step 14 標 ✅（Phase 4 完成）
+- CLAUDE.md 新增「Marketplace 發佈」小節（skill 增減時須同步 marketplace.json）
+- MEMORY.md 補 3 條新決策 + 迭代 #5/#6 表格
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- JSON schema 驗證通過（`node -e`）
+- 實機 `/plugin install` 驗收待使用者下次開新 session 時執行
+
+### 🔄 下次目標
+
+- 實機 `/plugin install buddha-all@buddha-skills` 驗證 10 個 skill 能被 Claude Code 辨識
+- 若有遺漏或路徑錯誤 → 修正 marketplace.json
+
+### 💡 技術筆記
+
+- 上游三個 repo 都有自己的 marketplace（anthropic-skills = `anthropic-agent-skills`、omc = `omc`），改讓使用者各自 `/plugin marketplace add`，避免重新發佈他人作品的授權風險
+- karpathy-skills 只有 1 個 skill 且無 marketplace，改採「手動複製」建議
+- 本 repo 的 `upstream/` 只作開發參考；執行期請直接接上游 marketplace
+
+### 🔗 關聯
+
+- PR: #9
+- Step: ROADMAP Step 14
+- Release: v0.4.0（本次）

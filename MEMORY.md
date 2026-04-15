@@ -12,6 +12,9 @@
 | 2026-04-15 | `auto-dev-mode` 定位為 router，四模式各有獨立 skill | 觸發更精準、各模式邏輯隔離、便於個別優化 | `.claude/skills/` |
 | 2026-04-15 | 每個 Phase 結束打 minor version tag | 清楚的版本里程碑、便於 rollback | release 流程 |
 | 2026-04-15 | `PAT_TOKEN` 重用 `gh auth token` | 免建 fine-grained PAT，同等 scope（`repo`+`workflow`） | CI |
+| 2026-04-15 | marketplace 只放本 repo 自建 skill（10 個） | 避免重新發佈他人作品的授權風險，讓使用者直接接上游取得最新版 | `.claude-plugin/marketplace.json` |
+| 2026-04-15 | 單一 plugin `buddha-all` 打包 10 個 skill | 降低安裝複雜度，單一指令一次取得 | marketplace 結構 |
+| 2026-04-15 | marketplace version 獨立於 git tag | marketplace 穩定度與 repo 開發節奏解耦 | 版本管理 |
 
 ## 已知問題與解法
 
@@ -33,3 +36,5 @@
 | #2 | 2026-04-15 | Step 6–7 | 從 `D:\35_UAV` 抽取 pptx-visual-qa 與 resilient-image-download |
 | #3 | 2026-04-15 | Step 8–10 | Phase 2 三個工具 skill（auto-iterate、upstream-search、skill-scaffold） |
 | #4 | 2026-04-15 | Step 11–13 | Phase 3 四模式 skill 補齊（A/C/D + B router 化） |
+| #5 | 2026-04-15 | 收尾 | 六項必做更新 + 新增 SESSIONS.md 雙層紀錄 |
+| #6 | 2026-04-15 | Step 14 | Phase 4 marketplace 支援（`/plugin install buddha-all@buddha-skills`） |

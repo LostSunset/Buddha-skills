@@ -134,4 +134,17 @@
   - [x] PR 合併
 - **完成日期**: 2026-04-15
 
-## Phase 4+：待規劃
+## Phase 4：Marketplace 安裝支援
+
+### Step 14：Claude Code marketplace
+- **狀態**: ✅ 完成
+- **依賴**: Step 10
+- **範圍**: `.claude-plugin/marketplace.json`（單一 plugin `buddha-all`，含 10 個 skill）+ README 安裝指引
+- **驗收條件（AC）**:
+  - [x] `/plugin marketplace add LostSunset/Buddha-skills` 可辨識
+  - [x] `/plugin install buddha-all@buddha-skills` 可安裝 10 個 skill
+  - [x] README 同時引導三個 upstream marketplace 各自安裝
+  - [x] PR 合併
+- **完成日期**: 2026-04-15（PR #9）
+
+## Phase 5+：待規劃

@@ -56,3 +56,16 @@
 - [v0.1.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.1.0)
 - [v0.2.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.2.0)
 - [v0.3.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.3.0)
+- [v0.4.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.4.0)
+
+### 延伸（Session #1 續）：marketplace 安裝支援
+
+**新增**：`.claude-plugin/marketplace.json` — marketplace `buddha-skills` + plugin `buddha-all`（10 skills）
+
+**使用方式**：
+```bash
+/plugin marketplace add LostSunset/Buddha-skills
+/plugin install buddha-all@buddha-skills
+```
+
+對應 DEV_LOG 迭代 #6、PR #9、Release v0.4.0。

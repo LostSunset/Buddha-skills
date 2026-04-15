@@ -60,6 +60,12 @@ type：`feat` / `fix` / `refactor` / `test` / `docs` / `chore` / `style` / `perf
 - `fix/<name>` — Bug 修復
 - `chore/upstream-update-YYYY-MM-DD` — 每日上游同步（自動）
 
+## Marketplace 發佈
+
+- `.claude-plugin/marketplace.json` 定義 marketplace `buddha-skills` 與單一 plugin `buddha-all`
+- **新增/移除 skill 時**必須同步更新 `marketplace.json` 的 `plugins[0].skills` 陣列
+- marketplace version（metadata.version）遵循獨立 semver，與 repo 的 git tag 不強綁
+
 ## upstream 子模組
 
 - 追蹤各自的 `main` 分支
