@@ -1,0 +1,31 @@
+{
+  "name": "buddha-skills",
+  "owner": {
+    "name": "LostSunset",
+    "email": "lollipopg4ao3@gmail.com"
+  },
+  "metadata": {
+    "description": "LostSunset 個人 Claude Code skills 庫 — 涵蓋開發日誌、四模式自動開發（A/B/C/D）、skill 工具鏈，以及從實戰專案抽取的 PPTX 視覺 QA 與批次圖片下載",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "buddha-all",
+      "description": "完整 Buddha-skills 套件（10 個 skill）：dev-log、auto-dev-mode router、四模式 skill（new-project-init / auto-iterate / maintenance-patrol / project-takeover）、upstream-search、skill-scaffold、pptx-visual-qa、resilient-image-download",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./.claude/skills/dev-log",
+        "./.claude/skills/auto-dev-mode",
+        "./.claude/skills/new-project-init",
+        "./.claude/skills/auto-iterate",
+        "./.claude/skills/maintenance-patrol",
+        "./.claude/skills/project-takeover",
+        "./.claude/skills/upstream-search",
+        "./.claude/skills/skill-scaffold",
+        "./.claude/skills/pptx-visual-qa",
+        "./.claude/skills/resilient-image-download"
+      ]
+    }
+  ]
+}

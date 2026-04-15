@@ -19,7 +19,18 @@
 - `docs/` — 開發日誌、規則、架構文件
 - `CLAUDE-CODE-自動開發指令.md` — Claude Code 四種模式（A/B/C/D）自動開發流程
 
-## Clone
+## 以 Claude Code Plugin 安裝（推薦）
+
+在 Claude Code 裡執行：
+
+```bash
+/plugin marketplace add LostSunset/Buddha-skills
+/plugin install buddha-all@buddha-skills
+```
+
+一次取得全部 10 個 skill。不需要 clone 本 repo，也不需要管 submodule。
+
+## Clone（開發或修改本 repo 時才需要）
 
 ```bash
 git clone --recurse-submodules https://github.com/LostSunset/Buddha-skills.git
