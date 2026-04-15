@@ -5,7 +5,10 @@
 
 ## 1. 檔案位置
 
-`docs/DEV_LOG.md`（append-only；絕不覆寫既有紀錄）
+- `docs/DEV_LOG.md` — 迭代層（每次開發動作的詳細紀錄，append-only）
+- `docs/SESSIONS.md` — Session 層（一次完整對話的高層摘要，append-only）
+
+兩者為雙層紀錄：DEV_LOG 細、SESSIONS 粗，互相引用。
 
 ## 2. 時間戳
 

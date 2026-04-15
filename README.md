@@ -34,3 +34,21 @@ git submodule update --init --recursive
 ## 開發規範
 
 見 [CLAUDE.md](./CLAUDE.md) 與 [docs/DEV_LOG_RULES.md](./docs/DEV_LOG_RULES.md)。
+
+## 進度
+
+- **目前版本**：[v0.3.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.3.0)
+- **已完成 Phase**：Phase 1（工作流基礎）、Phase 2（自建 skills）、Phase 3（四模式補齊）
+- **ROADMAP Step**：13 / 13 ✅
+- **自建 skills**：10 個
+
+### skills 一覽
+
+| 類別 | Skills |
+|------|--------|
+| 基礎 | `dev-log`、`auto-dev-mode`（模式 router） |
+| 四模式（對應 CLAUDE-CODE-自動開發指令.md） | `new-project-init`（A）、`auto-iterate`（B）、`maintenance-patrol`（C）、`project-takeover`（D） |
+| 工具 | `upstream-search`、`skill-scaffold` |
+| 實戰 | `pptx-visual-qa`、`resilient-image-download` |
+
+完整 ROADMAP 見 [ROADMAP.md](./ROADMAP.md)。

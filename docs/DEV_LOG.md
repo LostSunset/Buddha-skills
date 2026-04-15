@@ -155,5 +155,44 @@
 
 ### 🔗 關聯
 
-- PR: 本次迭代（Phase 3）
+- PR: #8
 - Step: ROADMAP Step 11、12、13
+
+---
+
+## [2026-04-15 13:45] 迭代 #5 — LostSunset + claude
+
+### 📋 本次目標
+
+- 執行六項必做更新收尾本 session：README 進度、CLAUDE/MEMORY 補記、新增 SESSIONS.md
+
+### ✅ 完成項目
+
+- README 新增「進度」與「skills 一覽」小節
+- CLAUDE.md 補「模式 skill 對應」小節
+- MEMORY.md 新增 4 條技術決策 + 迭代 #2/#3/#4 表格更新
+- 新增 `docs/SESSIONS.md`，記錄 Session #1（本次從 0 到 v0.3.0 的完整摘要）
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- N/A
+
+### 🔄 下次目標
+
+- 等 02:00 cron 首次實戰觸發觀察 `@claude` 行為
+- 視實戰反饋微調 skills description
+
+### 💡 技術筆記
+
+- SESSIONS.md 以「一次對話」為單位做高層摘要，DEV_LOG 仍保留每次迭代細節 → 雙層記憶系統
+- 六項必做更新本次全部自動化完成（除 Release 已於 v0.3.0 階段完成）
+
+### 🔗 關聯
+
+- SESSION: #1
+- Release: v0.3.0
+- Step: 無新增 ROADMAP Step（純收尾）

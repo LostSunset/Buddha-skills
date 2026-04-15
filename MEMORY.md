@@ -9,6 +9,9 @@
 | 2026-04-15 | 文件一律正體中文 | 使用者語言偏好 | 所有文件 |
 | 2026-04-15 | @claude 可直接 push 到 PR 分支 | 降低手動介入，加快同步 | workflow 權限 |
 | 2026-04-15 | Claude Code Action 採用 OAuth token | 使用現有 Claude 訂閱，無需付費 API key | CI 認證 |
+| 2026-04-15 | `auto-dev-mode` 定位為 router，四模式各有獨立 skill | 觸發更精準、各模式邏輯隔離、便於個別優化 | `.claude/skills/` |
+| 2026-04-15 | 每個 Phase 結束打 minor version tag | 清楚的版本里程碑、便於 rollback | release 流程 |
+| 2026-04-15 | `PAT_TOKEN` 重用 `gh auth token` | 免建 fine-grained PAT，同等 scope（`repo`+`workflow`） | CI |
 
 ## 已知問題與解法
 
@@ -26,4 +29,7 @@
 
 | 迭代 | 日期 | 完成步驟 | 重點變更 |
 |------|------|----------|----------|
-| #1 | 2026-04-15 | Task 1 | 倉庫初始化、README、.gitignore、首次 push |
+| #1 | 2026-04-15 | Task 1–5 | Phase 1 工作流基礎建設（倉庫、治理、skill、submodule、CI） |
+| #2 | 2026-04-15 | Step 6–7 | 從 `D:\35_UAV` 抽取 pptx-visual-qa 與 resilient-image-download |
+| #3 | 2026-04-15 | Step 8–10 | Phase 2 三個工具 skill（auto-iterate、upstream-search、skill-scaffold） |
+| #4 | 2026-04-15 | Step 11–13 | Phase 3 四模式 skill 補齊（A/C/D + B router 化） |

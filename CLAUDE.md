@@ -18,6 +18,14 @@
 
 依 `CLAUDE-CODE-自動開發指令.md` 的四種模式（A 新專案 / B 開發中 / C 維護 / D 接手）自動偵測並執行。
 
+### 模式 skill 對應
+
+- `auto-dev-mode` — 模式偵測 router（先呼叫它判斷 A/B/C/D）
+- `new-project-init` — 模式 A（Phase 0 九小節初始化）
+- `auto-iterate` — 模式 B（持續迭代 B.1–B.6）
+- `maintenance-patrol` — 模式 C（巡檢 + 持續改善 + 版本管理）
+- `project-takeover` — 模式 D（考古 + 治理 + 切入模式 B）
+
 ## 開發日誌
 
 **每次迭代完成前必須更新 `docs/DEV_LOG.md`**，規則見 [`docs/DEV_LOG_RULES.md`](./docs/DEV_LOG_RULES.md)。
