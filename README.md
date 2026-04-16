@@ -21,7 +21,7 @@
 
 ## 以 Claude Code Plugin 安裝（推薦）
 
-### 本 repo 的 13 個自建 skill
+### 本 repo 的 14 個自建 skill
 
 ```bash
 /plugin marketplace add LostSunset/Buddha-skills
@@ -69,7 +69,7 @@ git submodule update --init --recursive
 - **目前版本**：[v0.5.0](https://github.com/LostSunset/Buddha-skills/releases/tag/v0.5.0)
 - **已完成 Phase**：Phase 1（工作流基礎）、Phase 2（自建 skills）、Phase 3（四模式補齊）、Phase 4（marketplace）、Phase 5（PIC 實戰抽取）
 - **ROADMAP Step**：15 / 15 ✅
-- **自建 skills**：13 個
+- **自建 skills**：14 個
 
 ### skills 一覽
 
@@ -80,5 +80,6 @@ git submodule update --init --recursive
 | 工具 | `upstream-search`、`skill-scaffold` |
 | 實戰（PPTX / 圖片） | `pptx-visual-qa`、`resilient-image-download` |
 | 實戰（PIC 全端 WebGUI） | `milestone-pipeline`、`subagent-dispatch-matrix`、`claude-gh-app-setup` |
+| CI / GitHub Actions | `claude-pr-automerge` |
 
 完整 ROADMAP 見 [ROADMAP.md](./ROADMAP.md)。

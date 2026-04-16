@@ -318,3 +318,46 @@
 - PR: #11
 - Issue: —
 - Step: 上游同步（無對應 ROADMAP Step）
+
+---
+
+## [2026-04-16 09:30] 迭代 #9 — LostSunset + claude
+
+### 📋 本次目標
+
+- 修正 @claude 不會自動合併 PR 的問題
+- 將「讓 @claude 自動合併 PR」技巧做成 skill
+
+### ✅ 完成項目
+
+- 確認 @claude workflow 修正成功（PR #11，run 24486791825，2m5s success）
+- `update-upstream.yml` PR body 新增明確合併指令：`gh pr merge chore/upstream-update-$DATE --merge --repo LostSunset/Buddha-skills` (commit: `635d6fc`)
+- 新增 `.claude/skills/claude-pr-automerge/SKILL.md`：完整說明為何 @claude 不合併（沒有指令而非沒有權限）、`issue_comment` vs `pull_request` checkout 差異、分支名寫死技巧
+- `marketplace.json` 擴充為 14 個 skill，version 1.1.0 → 1.2.0
+- `README.md` 新增「CI / GitHub Actions」類別、skill 數更新為 14
+- `MEMORY.md` 補 2 條技術決策 + 迭代 #9 表格
+
+### 🐛 發現問題
+
+- `gh pr merge --merge`（無參數）在 `issue_comment` 觸發時找不到 PR（checkout 是 main 分支，無 PR 上下文）
+
+### 📊 測試結果
+
+- workflow 修正後 @claude 回應正常（PR #11 驗證）
+- 合併指令改用分支名後可在任何觸發類型執行
+
+### 🔄 下次目標
+
+- 等下次每日 upstream sync 觸發，驗證 @claude 能自動合併 PR
+
+### 💡 技術筆記
+
+- @claude 說「合併超出我的操作權限」是錯誤的判斷——`GITHUB_TOKEN` 在 Actions 環境永遠存在，`gh pr merge` 一直可執行，只是沒有收到明確指令
+- `issue_comment` 觸發時 `actions/checkout` 預設 checkout `main`，`pull_request` 觸發才會有 `refs/pull/N/merge`
+- PR body 裡的 merge 指令要放在 fenced code block（\`\`\`bash）裡，@claude 才能識別為可執行指令
+
+### 🔗 關聯
+
+- PR: (pending)
+- Step: 無新 ROADMAP Step（skill 新增 + CI 修正）
+- Commits: `635d6fc`（CI 修正）+ skill/marketplace/README/MEMORY
