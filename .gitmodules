@@ -13,3 +13,8 @@
 	url = https://github.com/yeachan-heo/oh-my-claudecode
 	branch = main
 	update = merge
+[submodule "upstream/claude-scholar"]
+	path = upstream/claude-scholar
+	url = https://github.com/Galaxy-Dawn/claude-scholar
+	branch = main
+	update = merge

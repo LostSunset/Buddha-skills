@@ -4,7 +4,7 @@
 [![Upstream Guard](https://github.com/LostSunset/Buddha-skills/actions/workflows/upstream-guard.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/upstream-guard.yml)
 [![Claude PR Review](https://github.com/LostSunset/Buddha-skills/actions/workflows/claude-review.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/claude-review.yml)
 [![Release](https://img.shields.io/github/v/release/LostSunset/Buddha-skills?include_prereleases&sort=semver)](https://github.com/LostSunset/Buddha-skills/releases)
-[![Submodules](https://img.shields.io/badge/upstream--submodules-3-blue)](./upstream/README.md)
+[![Submodules](https://img.shields.io/badge/upstream--submodules-4-blue)](./upstream/README.md)
 [![Docs](https://img.shields.io/badge/docs-正體中文-ea5545)](./CLAUDE.md)
 
 > LostSunset 專屬的 Claude Code skills 庫。
@@ -16,6 +16,7 @@
   - `anthropic-skills/` — [anthropics/skills](https://github.com/anthropics/skills)
   - `andrej-karpathy-skills/` — [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
   - `oh-my-claudecode/` — [yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode)
+  - `claude-scholar/` — [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar)（學術研究向：50 skills + 15 agents）
 - `docs/` — 開發日誌、規則、架構文件
 - `CLAUDE-CODE-自動開發指令.md` — Claude Code 四種模式（A/B/C/D）自動開發流程
 
@@ -28,7 +29,7 @@
 /plugin install buddha-all@buddha-skills
 ```
 
-### 搭配三個上游 skill 庫（各自獨立安裝，保持原作者維護）
+### 搭配四個上游 skill 庫（各自獨立安裝，保持原作者維護）
 
 本 repo 的 `upstream/` 是開發時的參考鏡像，**執行期**請直接安裝上游各自的 marketplace，取得最新版與原作者的維護：
 
@@ -42,6 +43,10 @@
 # oh-my-claudecode（32 skills + 28 agents 的多代理編排）
 /plugin marketplace add yeachan-heo/oh-my-claudecode
 /plugin install oh-my-claudecode@omc
+
+# claude-scholar（學術研究向，50 skills + 15 agents）
+/plugin marketplace add Galaxy-Dawn/claude-scholar
+/plugin install claude-scholar@claude-scholar
 
 # andrej-karpathy-skills 目前只有 1 個 skill、無 marketplace；可手動複製單檔使用
 ```

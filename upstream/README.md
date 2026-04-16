@@ -9,6 +9,7 @@
 | `anthropic-skills/` | [anthropics/skills](https://github.com/anthropics/skills) | `main` |
 | `andrej-karpathy-skills/` | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) | `main` |
 | `oh-my-claudecode/` | [yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | `main` |
+| `claude-scholar/` | [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) | `main` |
 
 ## 規則
 

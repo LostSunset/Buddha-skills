@@ -21,6 +21,7 @@
 | 2026-04-15 | Branch protection 用 `gh api -X PUT` 腳本化 | 免進 UI、可重現、可 diff | 倉庫設定流程 |
 | 2026-04-16 | @claude 不會自動合併 PR 是因為沒收到指令，不是沒有技術權限 | `GITHUB_TOKEN` 在 Actions 環境永遠存在，`gh pr merge` 一直可執行 | `claude-pr-automerge` skill / PR body 設計 |
 | 2026-04-16 | `gh pr merge --merge`（無參數）在 `issue_comment` 觸發時失敗，要用分支名 | `issue_comment` checkout 是 main，無法偵測 PR；`pull_request` 才有 `GITHUB_REF` 含 PR 號 | `update-upstream.yml` PR body、`claude-pr-automerge` skill |
+| 2026-04-16 | 新增 `claude-scholar` 為第 4 個 upstream submodule | 學術研究工作流（50 skills + 15 agents）補齊研究向缺口，與既有三個定位互補 | `upstream/`、`upstream-search` skill |
 
 ## 已知問題與解法
 
@@ -45,4 +46,6 @@
 | #5 | 2026-04-15 | 收尾 | 六項必做更新 + 新增 SESSIONS.md 雙層紀錄 |
 | #6 | 2026-04-15 | Step 14 | Phase 4 marketplace 支援（`/plugin install buddha-all@buddha-skills`） |
 | #7 | 2026-04-15 | Step 15 | Phase 5 — 從 `D:\37_PIC` 全端 WebGUI 專案抽取 3 個 skill（milestone-pipeline、subagent-dispatch-matrix、claude-gh-app-setup），marketplace 擴充為 13 個 skill |
-| #8 | 2026-04-16 | — | 修正 `claude-review.yml`（`claude_args` + 移除 `github_token`），驗證 @claude 回應正常；新增 `claude-pr-automerge` skill + `update-upstream.yml` PR body 加入合併指令 |
+| #8 | 2026-04-16 | — | 每日上游同步 2026-04-15（andrej-karpathy-skills README 更新，@claude bot 自動審查） |
+| #9 | 2026-04-16 | — | 修正 `claude-review.yml`（`claude_args` + 移除 `github_token`），驗證 @claude 回應正常；新增 `claude-pr-automerge` skill + `update-upstream.yml` PR body 加入合併指令 |
+| #10 | 2026-04-16 | — | 新增 `claude-scholar` 為第 4 個 upstream submodule（50 skills + 15 agents，學術研究向），更新 `upstream-search` skill / README / MEMORY 同步 |

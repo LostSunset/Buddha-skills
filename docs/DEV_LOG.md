@@ -361,3 +361,45 @@
 - PR: (pending)
 - Step: 無新 ROADMAP Step（skill 新增 + CI 修正）
 - Commits: `635d6fc`（CI 修正）+ skill/marketplace/README/MEMORY
+
+---
+
+## [2026-04-16 10:00] 迭代 #10 — LostSunset + claude
+
+### 📋 本次目標
+
+- 新增 `Galaxy-Dawn/claude-scholar` 為第 4 個 upstream submodule（學術研究向）
+
+### ✅ 完成項目
+
+- `git submodule add -b main https://github.com/Galaxy-Dawn/claude-scholar upstream/claude-scholar`
+- `.gitmodules` 新增 `claude-scholar` 項目 + `update = merge`
+- `upstream/README.md` submodule 表格加入第 4 列
+- `README.md` 多處更新：badge（`upstream-submodules-3` → `-4`）、目錄說明、`/plugin marketplace add Galaxy-Dawn/claude-scholar` 安裝指引、「搭配三個」→「搭配四個」
+- `.claude/skills/upstream-search/SKILL.md` 新增 claude-scholar 定位（學術研究向 / 50 skills + 15 agents），description 加入 scholar / 學術 / 論文 / research 觸發字
+- `MEMORY.md` 補 1 條技術決策 + 迭代 #8/#9/#10 表格校正
+
+### 🐛 發現問題
+
+- 原 MEMORY.md 表格只到 #7，補入 `@claude` 自動同步的 #8 與前次 skill 新增的 #9
+
+### 📊 測試結果
+
+- `upstream/claude-scholar/` 已成功 clone（內含 50 skills、15 agents、multilingual docs）
+- `.gitmodules` 結構與既有 3 個 submodule 一致
+- `update-upstream.yml` 自動處理 `upstream/*/` 全部 submodule，無需額外修改
+
+### 🔄 下次目標
+
+- 下次每日 sync 觸發時觀察 claude-scholar 是否正常進入 PR 摘要
+- 視需要從 claude-scholar 抽取學術研究相關 skill（如 `citation-verification`、`ml-paper-writing`）為 Phase 6 來源
+
+### 💡 技術筆記
+
+- `claude-scholar` 本身有 `.claude-plugin/marketplace.json`，使用者可直接 `/plugin marketplace add Galaxy-Dawn/claude-scholar` 安裝，不需經由本 repo
+- 四個 upstream 的定位已明確分工：anthropic（官方規範）/ karpathy（教學）/ omc（社群整合）/ scholar（學術研究）
+
+### 🔗 關聯
+
+- PR: (pending)
+- Step: 無新 ROADMAP Step（submodule 擴充）

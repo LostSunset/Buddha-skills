@@ -1,19 +1,20 @@
 ---
 name: upstream-search
-description: 跨三個 upstream submodule（anthropic-skills、andrej-karpathy-skills、oh-my-claudecode）搜尋 skill 範例、寫法慣例、frontmatter 模式、工具用法。當使用者問「upstream 有沒有類似的 skill」「怎麼寫 XX 風格的 skill」「參考 anthropic / karpathy / omc 怎麼做 XX」「找 upstream 範例」時使用。只讀搜尋，不修改 upstream 內容。
+description: 跨四個 upstream submodule（anthropic-skills、andrej-karpathy-skills、oh-my-claudecode、claude-scholar）搜尋 skill 範例、寫法慣例、frontmatter 模式、工具用法。當使用者問「upstream 有沒有類似的 skill」「怎麼寫 XX 風格的 skill」「參考 anthropic / karpathy / omc / scholar 怎麼做 XX」「找 upstream 範例」「學術 / 論文 / research skill 範例」時使用。只讀搜尋，不修改 upstream 內容。
 ---
 
 # upstream-search
 
-在 `upstream/` 下三個子模組中找 skill 與寫法範例。
+在 `upstream/` 下四個子模組中找 skill 與寫法範例。
 
-## 三個來源定位
+## 四個來源定位
 
 | Submodule | 特色 | 適合找什麼 |
 |-----------|------|------------|
 | `anthropic-skills/` | 官方出品、規範最嚴謹 | frontmatter 格式、描述撰寫範例、skill 結構標準 |
 | `andrej-karpathy-skills/` | 教學導向 | 教育性 prompt、步驟展示、學習型 skill |
 | `oh-my-claudecode/` | 社群生態、整合豐富 | agent/team 整合、MCP、pipeline、tmux/worktree 模式 |
+| `claude-scholar/` | 學術研究向（50 skills + 15 agents） | 論文寫作、citation、LaTeX、Obsidian、Kaggle、ML 研究工作流 |
 
 ## 搜尋範本
 
