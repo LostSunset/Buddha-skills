@@ -79,10 +79,14 @@ jobs:
             echo "- \`docs/\`（排除 \`docs/superpowers/specs/\`）"
             echo "- 根目錄 \`CLAUDE.md\` / \`MEMORY.md\` / \`ROADMAP.md\`"
             echo ""
-            echo "若有影響請**直接 push commit 到本 PR 分支**修正本專案程式碼以適配。"
-            echo "若無影響，留言「No impact」即可。"
+            echo "若有影響請**直接 push commit 到本 PR 分支**修正本專案程式碼以適配，修正後再合併。"
+            echo "若無影響，使用 \`dev-log\` skill 寫入 \`docs/DEV_LOG.md\` 後，執行以下指令直接合併本 PR："
             echo ""
-            echo "完成後請使用 \`dev-log\` skill 以 \`auto/upstream-sync\` 作者身份寫入 \`docs/DEV_LOG.md\`。"
+            echo "\`\`\`bash"
+            echo "gh pr merge chore/upstream-update-$DATE --merge --repo LostSunset/Buddha-skills"
+            echo "\`\`\`"
+            echo ""
+            echo "**不需要留言，寫完 dev-log 後直接合併即可。**"
           } > /tmp/pr-body.md
 
       - name: Create or update Pull Request
