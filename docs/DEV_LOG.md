@@ -283,3 +283,38 @@
 - PR: (pending)
 - Step: ROADMAP Step 15
 - 來源專案: LostSunset/PIC（M2–M6 全端 WebGUI，main HEAD 截至今日 c8ab4c4）
+
+---
+
+## [2026-04-16 01:18 (UTC)] 迭代 #8 — auto/upstream-sync
+
+### 📋 本次目標
+
+- 每日上游同步 2026-04-15：更新 `upstream/andrej-karpathy-skills` submodule
+
+### ✅ 完成項目
+
+- upstream/andrej-karpathy-skills: `fb8fdb0..c9a44ae` (3 commits) (commit: `d2d9730`)
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- N/A（上游變更僅為 README 更新，無功能影響）
+
+### 🔄 下次目標
+
+- 持續觀察每日上游同步；若有 skill 相關變更再評估是否需要同步調整
+
+### 💡 技術筆記
+
+- 本次上游 3 commits 皆為 andrej-karpathy-skills README 文字更新（加入專案連結與社群連結）
+- 對本專案 `.claude/skills/**`、`docs/`、`CLAUDE.md`/`MEMORY.md`/`ROADMAP.md` 均無影響
+
+### 🔗 關聯
+
+- PR: #11
+- Issue: —
+- Step: 上游同步（無對應 ROADMAP Step）
