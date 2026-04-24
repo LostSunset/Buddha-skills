@@ -203,3 +203,10 @@
 - **完成日期**: 2026-04-24
 
 ## Phase 7+：待規劃
+
+### 候選方向
+
+- **從 upstream 抽取實戰 skill**：從 cloudflare-skills 的 `/build-agent` `/build-mcp` 斜線指令學習「完整 plugin 結構」寫法；從 google-skills 學習 Google Cloud Recipe 格式
+- **巡檢自動化**：`maintenance-patrol` skill 接 cron，每週自動跑依賴掃描 + 技術債報告
+- **skills 交叉驗證**：跨 6 個 upstream 做一次 frontmatter 一致性審計，整理到 `skill-scaffold` 範本中
+- **升級 Phase 5 的 PIC 實戰三件組**：隨著實際使用回饋微調 description 觸發力
