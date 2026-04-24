@@ -186,4 +186,20 @@
 - **完成日期**: 2026-04-24
 - **附帶 fix**: `update-upstream.yml` / `claude-review.yml` 改用 `submodules: true`（避開 `claude-scholar` 上游的孤兒 nested submodule，解決 2026-04-16 排程失敗）
 
+### Step 17：新增 `cloudflare/skills` 為第 6 個 upstream submodule
+- **狀態**: ✅ 完成
+- **預估時間**: 0.5 小時
+- **依賴**: Step 16
+- **範圍**:
+  - `.gitmodules` 新增 `upstream/cloudflare-skills` 指向 `https://github.com/cloudflare/skills` 追蹤 `main`
+  - `README.md` badge（`-5` → `-6`）、目錄說明、「搭配五個」→「搭配六個」、`/plugin marketplace add cloudflare/skills` 安裝指引
+  - `upstream/README.md` 表格加入第 6 列、文案「五個」→「六個」
+  - `.claude/skills/upstream-search/SKILL.md` 加入第 6 列定位（Workers / Agents SDK / Durable Objects / Sandbox / Wrangler / web-perf / MCP）、description 擴充觸發字
+  - `MEMORY.md` 加入決策
+- **驗收條件（AC）**:
+  - [x] `git submodule status` 顯示 6 個 submodule
+  - [x] `upstream-guard.yml` 依然阻擋 `upstream/cloudflare-skills/**` 內容直接變動
+  - [ ] PR 合併
+- **完成日期**: 2026-04-24
+
 ## Phase 7+：待規劃

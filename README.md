@@ -4,7 +4,7 @@
 [![Upstream Guard](https://github.com/LostSunset/Buddha-skills/actions/workflows/upstream-guard.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/upstream-guard.yml)
 [![Claude PR Review](https://github.com/LostSunset/Buddha-skills/actions/workflows/claude-review.yml/badge.svg)](https://github.com/LostSunset/Buddha-skills/actions/workflows/claude-review.yml)
 [![Release](https://img.shields.io/github/v/release/LostSunset/Buddha-skills?include_prereleases&sort=semver)](https://github.com/LostSunset/Buddha-skills/releases)
-[![Submodules](https://img.shields.io/badge/upstream--submodules-5-blue)](./upstream/README.md)
+[![Submodules](https://img.shields.io/badge/upstream--submodules-6-blue)](./upstream/README.md)
 [![Docs](https://img.shields.io/badge/docs-正體中文-ea5545)](./CLAUDE.md)
 
 > LostSunset 專屬的 Claude Code skills 庫。
@@ -18,6 +18,7 @@
   - `oh-my-claudecode/` — [yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode)
   - `claude-scholar/` — [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar)（學術研究向：50 skills + 15 agents）
   - `google-skills/` — [google/skills](https://github.com/google/skills)（Google Cloud 產品技能：BigQuery、Cloud Run、GKE、Firebase、AlloyDB、Cloud SQL、Well-Architected Framework 等 13 skills）
+  - `cloudflare-skills/` — [cloudflare/skills](https://github.com/cloudflare/skills)（Cloudflare 平台技能：Workers、Agents SDK、Durable Objects、Sandbox SDK、Wrangler、web-perf、build-agent / build-mcp 指令等 8 skills + 2 commands + 5 MCP servers）
 - `docs/` — 開發日誌、規則、架構文件
 - `CLAUDE-CODE-自動開發指令.md` — Claude Code 四種模式（A/B/C/D）自動開發流程
 
@@ -30,7 +31,7 @@
 /plugin install buddha-all@buddha-skills
 ```
 
-### 搭配五個上游 skill 庫（各自獨立安裝，保持原作者維護）
+### 搭配六個上游 skill 庫（各自獨立安裝，保持原作者維護）
 
 本 repo 的 `upstream/` 是開發時的參考鏡像，**執行期**請直接安裝上游各自的 marketplace，取得最新版與原作者的維護：
 
@@ -54,6 +55,10 @@
 # google-skills（Google Cloud 產品技能：13 skills，Apache 2.0）
 # 官方建議安裝方式
 npx skills add google/skills
+
+# cloudflare-skills（Cloudflare Workers / Agents SDK / Durable Objects / MCP）
+/plugin marketplace add cloudflare/skills
+/plugin install cloudflare@cloudflare
 ```
 
 不需要 clone 本 repo 也不需管 submodule。

@@ -24,6 +24,7 @@
 | 2026-04-16 | 新增 `claude-scholar` 為第 4 個 upstream submodule | 學術研究工作流（50 skills + 15 agents）補齊研究向缺口，與既有三個定位互補 | `upstream/`、`upstream-search` skill |
 | 2026-04-17 | `update-upstream.yml` / `claude-review.yml` 改用 `submodules: true`（非 recursive） | `claude-scholar` 上游含孤兒 nested submodule（`plugins/marketplaces/ai-research-skills` 有 gitlink 但無 `.gitmodules`），recursive checkout 會 fatal；本 repo 僅需 5 個頂層鏡像 | CI 穩定性 |
 | 2026-04-24 | 新增 `google/skills` 為第 5 個 upstream submodule | Google Cloud 官方出品（13 skills，Apache 2.0），補齊雲端基礎建設主題（BigQuery、Cloud Run、GKE、Firebase、AlloyDB、Cloud SQL、WAF），與既有四個（Claude 工具鏈、研究）定位互補 | `upstream/`、`upstream-search` skill |
+| 2026-04-24 | 新增 `cloudflare/skills` 為第 6 個 upstream submodule | Cloudflare 官方（8 skills + 2 斜線指令 + 5 MCP servers），補齊 Workers / Agents SDK / Durable Objects / Sandbox / Wrangler / web-perf 邊緣運算主題，與 google-skills 兩者完整覆蓋「主流雲端 + 邊緣」 | `upstream/`、`upstream-search` skill |
 
 ## 已知問題與解法
 

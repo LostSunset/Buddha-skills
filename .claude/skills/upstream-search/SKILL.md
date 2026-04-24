@@ -1,13 +1,13 @@
 ---
 name: upstream-search
-description: 跨五個 upstream submodule（anthropic-skills、andrej-karpathy-skills、oh-my-claudecode、claude-scholar、google-skills）搜尋 skill 範例、寫法慣例、frontmatter 模式、工具用法。當使用者問「upstream 有沒有類似的 skill」「怎麼寫 XX 風格的 skill」「參考 anthropic / karpathy / omc / scholar / google 怎麼做 XX」「找 upstream 範例」「學術 / 論文 / research skill 範例」「GCP / Google Cloud / BigQuery / Cloud Run / GKE skill 範例」時使用。只讀搜尋，不修改 upstream 內容。
+description: 跨六個 upstream submodule（anthropic-skills、andrej-karpathy-skills、oh-my-claudecode、claude-scholar、google-skills、cloudflare-skills）搜尋 skill 範例、寫法慣例、frontmatter 模式、工具用法。當使用者問「upstream 有沒有類似的 skill」「怎麼寫 XX 風格的 skill」「參考 anthropic / karpathy / omc / scholar / google / cloudflare 怎麼做 XX」「找 upstream 範例」「學術 / 論文 / research skill 範例」「GCP / Google Cloud / BigQuery / Cloud Run / GKE skill 範例」「Cloudflare / Workers / Agents SDK / Durable Objects / Wrangler / MCP skill 範例」時使用。只讀搜尋，不修改 upstream 內容。
 ---
 
 # upstream-search
 
-在 `upstream/` 下五個子模組中找 skill 與寫法範例。
+在 `upstream/` 下六個子模組中找 skill 與寫法範例。
 
-## 五個來源定位
+## 六個來源定位
 
 | Submodule | 特色 | 適合找什麼 |
 |-----------|------|------------|
@@ -16,6 +16,7 @@ description: 跨五個 upstream submodule（anthropic-skills、andrej-karpathy-s
 | `oh-my-claudecode/` | 社群生態、整合豐富 | agent/team 整合、MCP、pipeline、tmux/worktree 模式 |
 | `claude-scholar/` | 學術研究向（50 skills + 15 agents） | 論文寫作、citation、LaTeX、Obsidian、Kaggle、ML 研究工作流 |
 | `google-skills/` | Google Cloud 官方（13 skills，Apache 2.0） | GCP 產品（BigQuery、Cloud Run、GKE、Firebase、AlloyDB、Cloud SQL）、Well-Architected Framework、Cloud Recipe 寫法 |
+| `cloudflare-skills/` | Cloudflare 官方（8 skills + 2 commands + 5 MCP servers） | Workers、Agents SDK、Durable Objects、Sandbox SDK、Wrangler CLI、web-perf（Core Web Vitals）、build-agent/build-mcp 斜線指令、遠端 MCP 設定 |
 
 ## 搜尋範本
 

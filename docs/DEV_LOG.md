@@ -454,3 +454,49 @@
 
 - PR: (pending — `feature/upstream-google-skills`)
 - Step: ROADMAP Step 16（Phase 6）
+
+---
+
+## [2026-04-24 12:00] 迭代 #12 — LostSunset + claude
+
+### 📋 本次目標
+
+- 新增 `cloudflare/skills` 為第 6 個 upstream submodule（Cloudflare Workers / Agents SDK / Durable Objects / MCP 官方技能庫）
+
+### ✅ 完成項目
+
+- PR #12 合併（google/skills + CI 修正 submodules: recursive→true）
+- **新增 cloudflare/skills submodule**（pin `0438a07`）：
+  - `.gitmodules` 加入第 6 個區塊，`update = merge` 與其他 5 個一致
+  - `upstream/cloudflare-skills/` 含 8 個 SKILL.md（cloudflare、agents-sdk、durable-objects、sandbox-sdk、wrangler、web-perf、workers-best-practices、cloudflare-email-service）+ `/cloudflare:build-agent` `/cloudflare:build-mcp` 斜線指令 + 5 個遠端 MCP server 設定
+- **同步更新文件與 skill**：
+  - `README.md`：badge `upstream-submodules-6`、上游清單加入 Cloudflare 定位、`/plugin marketplace add cloudflare/skills` 指引
+  - `upstream/README.md`：文案「五個」→「六個」、表格第 6 列
+  - `.claude/skills/upstream-search/SKILL.md`：description 加入 cloudflare / Workers / Agents SDK / Durable Objects / Wrangler / MCP 觸發字，來源表新增第 6 列
+  - `MEMORY.md`：補 2026-04-24 cloudflare 決策
+  - `ROADMAP.md`：新增 Phase 6 Step 17
+
+### 🐛 發現問題
+
+- 無
+
+### 📊 測試結果
+
+- `git submodule status` 顯示 6 個 submodule 正確 checkout
+- `git status` 乾淨
+- cloudflare/skills 含自己的 `.claude-plugin/marketplace.json`，使用者可直接 `/plugin marketplace add cloudflare/skills` 安裝
+
+### 🔄 下次目標
+
+- 下一輪 UTC 18:00 排程觀察 `update-upstream.yml` 是否順利納入 6 個 submodule
+- 視需要從 cloudflare-skills 抽取邊緣運算相關 skill 範例（如 `build-mcp` 斜線指令的設計）
+
+### 💡 技術筆記
+
+- 6 個 upstream 的定位分工：anthropic（官方規範）/ karpathy（教學）/ omc（社群整合）/ scholar（學術研究）/ google（主流雲端）/ cloudflare（邊緣運算）
+- cloudflare/skills 是第一個帶 **slash commands + MCP servers** 設定進來的 upstream，可作為「完整 Claude Code plugin」結構的參考範本
+
+### 🔗 關聯
+
+- PR: (pending — `feature/upstream-cloudflare-skills`)
+- Step: ROADMAP Step 17（Phase 6）
