@@ -403,3 +403,54 @@
 
 - PR: (pending)
 - Step: 無新 ROADMAP Step（submodule 擴充）
+
+---
+
+## [2026-04-24 10:00] 迭代 #11 — LostSunset + claude
+
+### 📋 本次目標
+
+- 新增 `google/skills` 為第 5 個 upstream submodule（Google Cloud 官方技能庫）
+- 順帶修正 2026-04-16 排程失敗的 `submodules: recursive` 問題
+
+### ✅ 完成項目
+
+- **分支保護啟用**：`gh api -X PUT repos/LostSunset/Buddha-skills/branches/main/protection` 套用 1 approval + admin bypass（`enforce_admins: false`），防禁 force push / deletion
+- **修正 CI 排程失敗**：`update-upstream.yml` / `claude-review.yml` 將 `submodules: recursive` 改為 `submodules: true`
+  - 失敗原因：`upstream/claude-scholar` 上游在 `plugins/marketplaces/ai-research-skills` 等 4 處含 gitlink（mode 160000）但 `.gitmodules` 檔缺失，recursive 會 `fatal: No url found for submodule path`
+  - 本 repo 只需 5 個頂層鏡像，不需進入 nested 階層
+- **新增 google/skills submodule**（pin `6f0b877`）：
+  - `.gitmodules` 加入第 5 個區塊，`update = merge` 與其他 4 個一致
+  - `upstream/google-skills/` 含 13 個 Cloud 技能（BigQuery、Cloud Run、GKE、Firebase、AlloyDB、Cloud SQL、WAF security/reliability/cost 等）
+- **同步更新文件與 skill**：
+  - `README.md`：badge `upstream-submodules-5`、上游清單加入 Google Cloud 定位、`npx skills add google/skills` 指引
+  - `upstream/README.md`：文案「三個」→「五個」（原文案其實落後，一次補齊）、表格第 5 列
+  - `.claude/skills/upstream-search/SKILL.md`：description 加入 google / GCP / BigQuery / Cloud Run / GKE 觸發字，來源表新增第 5 列
+  - `MEMORY.md`：補 2026-04-17（CI submodules 修正）與 2026-04-24（google/skills 新增）兩條決策
+  - `ROADMAP.md`：新增 Phase 6 Step 16
+
+### 🐛 發現問題
+
+- `upstream/claude-scholar` 上游本身有「孤兒 nested submodule」狀態（gitlink 但 `.gitmodules` 為空），屬於上游 bug；本 repo 僅能繞過 recursive 避開
+
+### 📊 測試結果
+
+- `git submodule update --init`（非 recursive）正常完成，5 個 submodule 全 checkout
+- `git status` 乾淨，僅保留預期 diff
+- `upstream-guard.yml` 邏輯未更動，仍會阻擋 `upstream/**` 內容變更
+
+### 🔄 下次目標
+
+- 下一輪 UTC 18:00 排程觀察 `update-upstream.yml` 是否順利處理 5 個 submodule
+- 若 google/skills 更新頻繁，評估是否需要從中抽取 GCP 相關 skill 落到本 repo `.claude/skills/`
+
+### 💡 技術筆記
+
+- 5 個 upstream 的定位分工：anthropic（官方規範）/ karpathy（教學）/ omc（社群整合）/ scholar（學術研究）/ google（雲端產品）
+- branch protection `enforce_admins: false` 讓 admin（本人）可直接 push 到 main，但 workflow 用的 PAT 會走 PR 流程
+- `submodules: true` 對多數 repo 已足夠；`recursive` 需確認每個子模組的 `.gitmodules` 完整性
+
+### 🔗 關聯
+
+- PR: (pending — `feature/upstream-google-skills`)
+- Step: ROADMAP Step 16（Phase 6）

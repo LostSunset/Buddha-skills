@@ -18,3 +18,8 @@
 	url = https://github.com/Galaxy-Dawn/claude-scholar
 	branch = main
 	update = merge
+[submodule "upstream/google-skills"]
+	path = upstream/google-skills
+	url = https://github.com/google/skills
+	branch = main
+	update = merge
