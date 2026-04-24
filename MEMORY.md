@@ -25,6 +25,7 @@
 | 2026-04-17 | `update-upstream.yml` / `claude-review.yml` 改用 `submodules: true`（非 recursive） | `claude-scholar` 上游含孤兒 nested submodule（`plugins/marketplaces/ai-research-skills` 有 gitlink 但無 `.gitmodules`），recursive checkout 會 fatal；本 repo 僅需 5 個頂層鏡像 | CI 穩定性 |
 | 2026-04-24 | 新增 `google/skills` 為第 5 個 upstream submodule | Google Cloud 官方出品（13 skills，Apache 2.0），補齊雲端基礎建設主題（BigQuery、Cloud Run、GKE、Firebase、AlloyDB、Cloud SQL、WAF），與既有四個（Claude 工具鏈、研究）定位互補 | `upstream/`、`upstream-search` skill |
 | 2026-04-24 | 新增 `cloudflare/skills` 為第 6 個 upstream submodule | Cloudflare 官方（8 skills + 2 斜線指令 + 5 MCP servers），補齊 Workers / Agents SDK / Durable Objects / Sandbox / Wrangler / web-perf 邊緣運算主題，與 google-skills 兩者完整覆蓋「主流雲端 + 邊緣」 | `upstream/`、`upstream-search` skill |
+| 2026-04-24 | Phase 6（上游生態擴充）結束打 `v0.6.0` minor tag | 依 CLAUDE.md 規則「每個 Phase 結束打 minor version tag」；Phase 6 含 Step 16（google）+ Step 17（cloudflare）+ CI submodules 修正 | 版本與 Release |
 
 ## 已知問題與解法
 
@@ -52,3 +53,5 @@
 | #8 | 2026-04-16 | — | 每日上游同步 2026-04-15（andrej-karpathy-skills README 更新，@claude bot 自動審查） |
 | #9 | 2026-04-16 | — | 修正 `claude-review.yml`（`claude_args` + 移除 `github_token`），驗證 @claude 回應正常；新增 `claude-pr-automerge` skill + `update-upstream.yml` PR body 加入合併指令 |
 | #10 | 2026-04-16 | — | 新增 `claude-scholar` 為第 4 個 upstream submodule（50 skills + 15 agents，學術研究向），更新 `upstream-search` skill / README / MEMORY 同步 |
+| #11 | 2026-04-24 | Step 16 | 新增 `google/skills` 為第 5 個 upstream submodule（13 skills，Apache 2.0，GCP 產品），順帶修正 CI `submodules: recursive → true` 避開 claude-scholar 孤兒 nested submodule |
+| #12 | 2026-04-24 | Step 17 | 新增 `cloudflare/skills` 為第 6 個 upstream submodule（8 skills + 2 commands + 5 MCP servers，邊緣運算），Phase 6 結束打 v0.6.0 |
