@@ -22,6 +22,8 @@
 | 2026-04-16 | @claude 不會自動合併 PR 是因為沒收到指令，不是沒有技術權限 | `GITHUB_TOKEN` 在 Actions 環境永遠存在，`gh pr merge` 一直可執行 | `claude-pr-automerge` skill / PR body 設計 |
 | 2026-04-16 | `gh pr merge --merge`（無參數）在 `issue_comment` 觸發時失敗，要用分支名 | `issue_comment` checkout 是 main，無法偵測 PR；`pull_request` 才有 `GITHUB_REF` 含 PR 號 | `update-upstream.yml` PR body、`claude-pr-automerge` skill |
 | 2026-04-16 | 新增 `claude-scholar` 為第 4 個 upstream submodule | 學術研究工作流（50 skills + 15 agents）補齊研究向缺口，與既有三個定位互補 | `upstream/`、`upstream-search` skill |
+| 2026-04-17 | `update-upstream.yml` / `claude-review.yml` 改用 `submodules: true`（非 recursive） | `claude-scholar` 上游含孤兒 nested submodule（`plugins/marketplaces/ai-research-skills` 有 gitlink 但無 `.gitmodules`），recursive checkout 會 fatal；本 repo 僅需 5 個頂層鏡像 | CI 穩定性 |
+| 2026-04-24 | 新增 `google/skills` 為第 5 個 upstream submodule | Google Cloud 官方出品（13 skills，Apache 2.0），補齊雲端基礎建設主題（BigQuery、Cloud Run、GKE、Firebase、AlloyDB、Cloud SQL、WAF），與既有四個（Claude 工具鏈、研究）定位互補 | `upstream/`、`upstream-search` skill |
 
 ## 已知問題與解法
 

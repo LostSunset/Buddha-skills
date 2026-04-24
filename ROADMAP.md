@@ -166,4 +166,24 @@
 - **來源專案**: `D:\37_PIC`（`LostSunset/PIC`，M2–M6 全端 WebGUI）
 - **完成日期**: 2026-04-15
 
-## Phase 6+：待規劃
+## Phase 6：上游生態擴充
+
+### Step 16：新增 `google/skills` 為第 5 個 upstream submodule
+- **狀態**: ✅ 完成
+- **預估時間**: 0.5 小時
+- **依賴**: Step 4
+- **範圍**:
+  - `.gitmodules` 新增 `upstream/google-skills` 指向 `https://github.com/google/skills` 追蹤 `main`
+  - `README.md` badge（`upstream-submodules-4` → `-5`）、目錄說明、「搭配四個」→「搭配五個」、`npx skills add google/skills` 安裝指引
+  - `upstream/README.md` 表格加入第 5 列、文案「三個」→「五個」
+  - `.claude/skills/upstream-search/SKILL.md` 加入第 5 列定位（GCP / BigQuery / Cloud Run / GKE / Firebase / WAF）、description 擴充觸發字
+  - `MEMORY.md` 加入決策與 CI 修正紀錄
+- **驗收條件（AC）**:
+  - [x] `git submodule status` 顯示 5 個 submodule
+  - [x] `upstream-guard.yml` 依然阻擋 `upstream/google-skills/**` 內容直接變動
+  - [x] `update-upstream.yml` 下一輪排程能納入 google/skills 差異
+  - [ ] PR 合併
+- **完成日期**: 2026-04-24
+- **附帶 fix**: `update-upstream.yml` / `claude-review.yml` 改用 `submodules: true`（避開 `claude-scholar` 上游的孤兒 nested submodule，解決 2026-04-16 排程失敗）
+
+## Phase 7+：待規劃
