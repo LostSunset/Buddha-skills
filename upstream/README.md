@@ -2,7 +2,7 @@
 
 > ⚠️ **唯讀鏡像，禁止修改**
 
-本目錄為五個上游專案的 git submodule 鏡像，用途是作為本專案的參考資源。
+本目錄為六個上游專案的 git submodule 鏡像，用途是作為本專案的參考資源。
 
 | 目錄 | 上游倉庫 | 追蹤分支 |
 |------|----------|----------|
@@ -11,6 +11,7 @@
 | `oh-my-claudecode/` | [yeachan-heo/oh-my-claudecode](https://github.com/yeachan-heo/oh-my-claudecode) | `main` |
 | `claude-scholar/` | [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) | `main` |
 | `google-skills/` | [google/skills](https://github.com/google/skills) | `main` |
+| `cloudflare-skills/` | [cloudflare/skills](https://github.com/cloudflare/skills) | `main` |
 
 ## 規則
 

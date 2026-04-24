@@ -23,3 +23,8 @@
 	url = https://github.com/google/skills
 	branch = main
 	update = merge
+[submodule "upstream/cloudflare-skills"]
+	path = upstream/cloudflare-skills
+	url = https://github.com/cloudflare/skills
+	branch = main
+	update = merge
